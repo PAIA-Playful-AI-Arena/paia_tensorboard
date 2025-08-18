@@ -17,7 +17,7 @@ jobs:
   nightly-release:
     runs-on: ubuntu-22.04
     needs: ci
-    if: github.repository == 'tensorflow/tensorboard'
+    if: github.repository == 'PAIA-Playful-AI-Arena/paia_tensorboard'
     steps:
       - name: Download pip package
         uses: actions/download-artifact@v4
@@ -28,11 +28,13 @@ jobs:
           path: wheels
       - name: Install Twine
         run: pip install twine
-      - name: Publish the package
+      - name: Check the package
         run: |
           twine check tb_nightly*.whl
-          twine upload tb_nightly*.whl
         working-directory: wheels
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.NIGHTLY_PYPI_PASSWORD }}
+
+      - name: Publish the package to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          verbose: true
+          print-hash: true

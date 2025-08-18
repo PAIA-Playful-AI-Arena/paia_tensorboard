@@ -33,16 +33,17 @@ REQUIRED_PACKAGES = get_required_packages()
 
 CONSOLE_SCRIPTS = [
     "tensorboard = tensorboard.main:run_main",
+    "paia_tensorboard = tensorboard.main:run_main",
 ]
 
 setup(
-    name="tensorboard",
+    name="paia_tensorboard",
     version=tensorboard.version.VERSION.replace("-", ""),
     description="TensorBoard lets you watch Tensors Flow",
     long_description=get_readme(),
-    url="https://github.com/tensorflow/tensorboard",
-    author="Google Inc.",
-    author_email="packages@tensorflow.org",
+    url="https://github.com/PAIA-Playful-AI-Arena/paia_tensorboard",
+    author="PAIA Technology Inc.",
+    author_email="service@paia-tech.com",
     # Contained modules and scripts.
     packages=find_packages(),
     entry_points={
