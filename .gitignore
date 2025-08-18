@@ -5,3 +5,5 @@
 *.egg-info/
 *.swp
 node_modules
+venv/
+var/
