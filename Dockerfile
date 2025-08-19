@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 # Install environment dependencies
 RUN apt update && apt install -y wget unzip python3 python3-pip python3-dev python-is-python3 default-jdk nodejs npm
@@ -29,4 +29,4 @@ RUN pip install -r ./tensorboard/pip_package/requirements.txt -r ./tensorboard/p
 COPY . /tensorboard
 
 # Fetch dependencies
-RUN bazel fetch //tensorboard/...
+# RUN bazel fetch //tensorboard/...
