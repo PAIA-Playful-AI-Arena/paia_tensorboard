@@ -31,8 +31,8 @@ jobs:
         run: pip install twine
       - name: Publish the package
         run: |
-          twine check tb_nightly*.whl
-          twine upload tb_nightly*.whl
+          twine check paia_tensorboard*.whl
+          twine upload paia_tensorboard*.whl
         working-directory: wheels
         env:
           TWINE_USERNAME: __token__
