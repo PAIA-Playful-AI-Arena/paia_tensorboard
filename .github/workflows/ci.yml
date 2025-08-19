@@ -8,7 +8,8 @@
 
 name: CI
 
-
+on:
+  workflow_call: {}
 
 permissions:
   contents: read
